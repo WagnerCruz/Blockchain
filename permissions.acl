@@ -1,0 +1,17 @@
+// #1 allow the sysem network admin to carry out indentities management
+//    and network operations
+
+rule NetowrkControlePermission{
+  description: "give admin ALL access to the system resources"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.*"
+  action: ALLOW
+}
+rule PrticipantRegistryControlPermission{
+  description: "give admin ALL access to ACME participant types"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "org.acme.airline.participant.*"
+  action: ALLOW
+}
